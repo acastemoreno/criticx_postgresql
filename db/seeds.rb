@@ -58,3 +58,13 @@ puts %Q{Find role games, Update all games
 p games = Game.where(genre: 'Role-playing (RPG)')
 games.update_all price: 2999
 p games = Game.where(genre: 'Role-playing (RPG)')
+
+puts %Q{Destroy game with id 3
+----------}
+p game = Game.find(3)
+game.destroy
+puts "game id 3 destroy"
+
+p games = Game.where(genre: 'Adventure')
+games.destroy_all
+puts "destroy all Adventure game"
