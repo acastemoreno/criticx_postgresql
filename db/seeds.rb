@@ -68,3 +68,5 @@ puts "game id 3 destroy"
 p games = Game.where(genre: 'Adventure')
 games.destroy_all
 puts "destroy all Adventure game"
+
+Game.destroy_all
