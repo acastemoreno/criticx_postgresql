@@ -1,5 +1,5 @@
 class Company < ApplicationRecord
-  validates :name, :country, presence: true
-  validates :name, uniqueness: true
-  validates :name, length: { maximum: 40 }
+  validates :name, presence: true, uniqueness: true, length: { maximum: 40 }
+
+  validates :country, presence: true
 end
