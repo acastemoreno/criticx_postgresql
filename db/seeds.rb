@@ -18,3 +18,24 @@ list_games = [{:name=>"Zombie Driver: Immortal Edition", :genre=>"Racing", :pric
 list_games.each do |game|
   Game.create(game)
 end
+puts %Q{All games
+----------}
+p Game.all
+puts %Q{Find game by release date
+----------}
+p Game.find_by(release_date: '2019-Aug-20')
+puts %Q{Find first game
+----------}
+p Game.first
+puts %Q{Find last game
+----------}
+p Game.last
+puts %Q{All games order by release_date asc
+----------}
+p Game.order(release_date: :asc)
+puts %Q{All games where price $59.99 (5999 cents)
+----------}
+p Game.where(price: 5999)
+puts %Q{All games where release year is 2019
+----------}
+p Game.where('extract(year from release_date) = ?', '2019')
