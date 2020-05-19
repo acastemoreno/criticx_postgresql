@@ -1,7 +1,11 @@
 class UpdateCriticGame < ActiveRecord::Migration[6.0]
   def change
-    add_column :critics, :title, :string
+    change_table :critics do |t|
+      t.string :title
+    end
 
-    add_reference :games, :company, foreign_key: true
+    change_table :games do |t|
+      t.references :company, null: false, foreign_key: true
+    end
   end
 end
