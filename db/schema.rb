@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 2020_05_19_211039) do
     t.string "genre"
     t.integer "price"
     t.date "release_date"
-    t.bigint "company_id", null: false
+    t.bigint "company_id"
     t.index ["company_id"], name: "index_games_on_company_id"
   end
 

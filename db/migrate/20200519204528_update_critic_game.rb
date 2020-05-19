@@ -5,7 +5,7 @@ class UpdateCriticGame < ActiveRecord::Migration[6.0]
     end
 
     change_table :games do |t|
-      t.references :company, null: false, foreign_key: true
+      t.references :company, null: true, foreign_key: true
     end
   end
 end
