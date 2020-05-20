@@ -19,6 +19,13 @@ class CompaniesController < ApplicationController
     end
   end
 
+  def destroy
+    @company = Company.find(params[:id]) # Find the game you want to destroy.
+    @company.destroy # Destroy it.
+    render json: { status: 'Successfully destroyed', data: @company }, status: :ok
+  end
+
+
   private
   def company_params()
     params.require(:company).permit(:name, :description, :start_date, :country)
