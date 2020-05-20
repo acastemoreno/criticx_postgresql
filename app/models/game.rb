@@ -1,5 +1,5 @@
 class Game < ApplicationRecord
-  belongs_to :company
+  belongs_to :company, optional: true
   has_many :critics
 
   validates :name, :genre, :price, :release_date, presence: true

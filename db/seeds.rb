@@ -5,8 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Game.create(name: 'Rune Factory 4 Special', genre: 'Role-playing (RPG)', price: 5999, release_date: Date.new(2019, 7, 25))
-Game.create(name: 'Borderlands 3', genre: 'Simulator', price: 5999, release_date: Date.new(2019, 9, 13))
+game = Game.create(name: 'Rune Factory 4 Special', genre: 'Role-playing (RPG)', price: 5999, release_date: Date.new(2019, 7, 25))
+p game.errors
+p Game.create(name: 'Borderlands 3', genre: 'Simulator', price: 5999, release_date: Date.new(2019, 9, 13))
 
 list_games = [{:name=>"Zombie Driver: Immortal Edition", :genre=>"Racing", :price=>5999, :release_date=>"2019-Jul-25"},
 {:name=>"Remnant: From the Ashes", :genre=>"Shooter", :price=>6999, :release_date=>"2019-Aug-20"},
@@ -67,6 +68,6 @@ puts "game id 3 destroy"
 
 p games = Game.where(genre: 'Adventure')
 games.destroy_all
-puts "destroy all Adventure game"
+# puts "destroy all Adventure game"
 
-Game.destroy_all
+# Game.destroy_all
