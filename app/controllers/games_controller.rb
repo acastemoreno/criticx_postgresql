@@ -23,7 +23,7 @@ class GamesController < ApplicationController
     if @game.update_attributes(game_params()) # Validation using the same private method as before
       render json: @game # render the updated record back
     else
-      render_error(@game.errors, :unprocessable_entity) # render errors
+      render json: @game.errors, status: :unprocessable_entity # render errors
     end
   end
 
